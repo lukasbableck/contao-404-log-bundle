@@ -1,0 +1,37 @@
+{
+    "name": "lukasbableck/contao-404-log-bundle",
+    "type": "contao-bundle",
+	"description": "",
+	"keywords": [
+		"404",
+		"log"
+	],
+    "license": "LGPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Lukas Bableck",
+			"email": "lukas@bableck.dev",
+			"homepage": "https://bableck.dev"
+		}
+	],
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^5.3",
+		"terminal42/contao-url-rewrite": "^1.7"
+    },
+	"conflict": {
+		"contao/manager-plugin": "<2.0 || >=3.0"
+	},
+	"require-dev": {
+		"contao/manager-plugin": "^2.0",
+		"friendsofphp/php-cs-fixer": "^3.57"
+	},
+    "autoload": {
+        "psr-4": {
+            "Lukasbableck\\Contao404LogBundle\\": "src/"
+        }
+    },
+	"extra": {
+		"contao-manager-plugin": "Lukasbableck\\Contao404LogBundle\\ContaoManager\\Plugin"
+	}
+}
