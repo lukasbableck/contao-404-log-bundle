@@ -33,6 +33,11 @@ $GLOBALS['TL_DCA']['tl_404_log'] = [
 			'all',
 		],
 		'operations' => [
+			'createRewrite' => [
+				'label' => &$GLOBALS['TL_LANG']['tl_404_log']['createRewrite'],
+				'href' => 'act=createRewrite',
+				'icon' => 'mover.svg',
+			],
 			'delete',
 			'show',
 		],
