@@ -27,7 +27,7 @@ class CreateRewriteListener extends Backend {
 		$id = $this->connection->lastInsertId();
 
 		$token = htmlspecialchars(System::getContainer()->get('contao.csrf.token_manager')->getDefaultTokenValue(), \ENT_QUOTES | \ENT_SUBSTITUTE | \ENT_HTML5);
-		$url = System::getContainer()->get('router')->generate('contao_backend').'?do=url_rewrites&act=edit&id=' . $id . '&rt=' . $token;
+		$url = System::getContainer()->get('router')->generate('contao_backend').'?do=url_rewrites&act=edit&id='.$id.'&rt='.$token;
 		$this->redirect($url);
 	}
 }
