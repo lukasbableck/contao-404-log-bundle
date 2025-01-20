@@ -47,11 +47,13 @@ $GLOBALS['TL_DCA']['tl_404_log'] = [
 			'sql' => 'int(10) unsigned NOT NULL auto_increment',
 		],
 		'tstamp' => [
+			'filter' => true,
 			'flag' => DataContainer::SORT_DAY_DESC,
 			'eval' => ['rgxp' => 'datim'],
 			'sql' => "int(10) unsigned NOT NULL default '0'",
 		],
 		'rootPage' => [
+			'filter' => true,
 			'search' => true,
 			'foreignKey' => 'tl_page.title',
 			'sql' => "int(10) unsigned NOT NULL default '0'",
