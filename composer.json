@@ -1,7 +1,7 @@
 {
     "name": "lukasbableck/contao-404-log-bundle",
     "type": "contao-bundle",
-	"description": "This Contao bundle logs 404 errors to the database, allows you to view them in the Contao backend and create redirects for them.",
+	"description": "This Contao bundle logs 404 errors to the database, allows you to view them in the Contao backend and create redirects for them if terminal42/contao-url-rewrite is installed.",
 	"keywords": [
 		"404",
 		"log",
@@ -18,14 +18,21 @@
     "require": {
         "php": "^8.1",
         "contao/core-bundle": "^5.3",
-		"terminal42/contao-url-rewrite": "^1.7"
+        "symfony/dependency-injection": "^6.4 || ^7.0",
+        "symfony/http-foundation": "^6.4 || ^7.0",
+        "symfony/http-kernel": "^6.4 || ^7.0",
+        "doctrine/dbal": "^3.6"
     },
 	"conflict": {
 		"contao/manager-plugin": "<2.0 || >=3.0"
 	},
 	"require-dev": {
 		"contao/manager-plugin": "^2.0",
-		"friendsofphp/php-cs-fixer": "^3.57"
+		"friendsofphp/php-cs-fixer": "^3.57",
+		"terminal42/contao-url-rewrite": "^1.7"
+	},
+	"suggest": {
+		"terminal42/contao-url-rewrite": "Create redirects for 404 errors with one click."
 	},
     "autoload": {
         "psr-4": {

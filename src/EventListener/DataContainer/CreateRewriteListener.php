@@ -1,6 +1,7 @@
 <?php
 namespace Lukasbableck\Contao404LogBundle\EventListener\DataContainer;
 
+use Composer\InstalledVersions;
 use Contao\Backend;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
@@ -16,6 +17,10 @@ class CreateRewriteListener extends Backend {
 
 	public function __invoke(?DataContainer $dc = null): void {
 		if (null === $dc || !$dc->id || 'createRewrite' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
+			return;
+		}
+
+		if (!InstalledVersions::isInstalled('terminal42/contao-url-rewrite')) {
 			return;
 		}
 
