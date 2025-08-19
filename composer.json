@@ -1,13 +1,13 @@
 {
-    "name": "lukasbableck/contao-404-log-bundle",
-    "type": "contao-bundle",
+	"name": "lukasbableck/contao-404-log-bundle",
+	"type": "contao-bundle",
 	"description": "This Contao bundle logs 404 errors to the database, allows you to view them in the Contao backend and create redirects for them if terminal42/contao-url-rewrite is installed.",
 	"keywords": [
 		"404",
 		"log",
 		"redirect"
 	],
-    "license": "LGPL-3.0-or-later",
+	"license": "LGPL-3.0-or-later",
 	"authors": [
 		{
 			"name": "Lukas Bableck",
@@ -15,15 +15,15 @@
 			"homepage": "https://bableck.dev"
 		}
 	],
-    "require": {
-        "php": "^8.1",
-        "contao/core-bundle": "^5.3",
-        "symfony/dependency-injection": "^6.4 || ^7.0",
-        "symfony/http-foundation": "^6.4 || ^7.0",
-        "symfony/http-kernel": "^6.4 || ^7.0",
-        "doctrine/dbal": "^3.6",
-        "symfony/event-dispatcher": "^6.4 || ^7.0"
-    },
+	"require": {
+		"php": "^8.1",
+		"contao/core-bundle": "^5.3",
+		"doctrine/dbal": "^3.6",
+		"symfony/dependency-injection": "^6.4 || ^7.0",
+		"symfony/event-dispatcher": "^6.4 || ^7.0",
+		"symfony/http-foundation": "^6.4 || ^7.0",
+		"symfony/http-kernel": "^6.4 || ^7.0"
+	},
 	"conflict": {
 		"contao/manager-plugin": "<2.0 || >=3.0"
 	},
@@ -35,11 +35,11 @@
 	"suggest": {
 		"terminal42/contao-url-rewrite": "Create redirects for 404 errors with one click."
 	},
-    "autoload": {
-        "psr-4": {
-            "Lukasbableck\\Contao404LogBundle\\": "src/"
-        }
-    },
+	"autoload": {
+		"psr-4": {
+			"Lukasbableck\\Contao404LogBundle\\": "src/"
+		}
+	},
 	"extra": {
 		"contao-manager-plugin": "Lukasbableck\\Contao404LogBundle\\ContaoManager\\Plugin"
 	}
