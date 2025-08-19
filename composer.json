@@ -21,7 +21,8 @@
         "symfony/dependency-injection": "^6.4 || ^7.0",
         "symfony/http-foundation": "^6.4 || ^7.0",
         "symfony/http-kernel": "^6.4 || ^7.0",
-        "doctrine/dbal": "^3.6"
+        "doctrine/dbal": "^3.6",
+        "symfony/event-dispatcher": "^6.4 || ^7.0"
     },
 	"conflict": {
 		"contao/manager-plugin": "<2.0 || >=3.0"
