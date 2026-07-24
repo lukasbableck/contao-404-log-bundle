@@ -18,6 +18,11 @@ class KernelResponseListener {
 			return;
 		}
 
+		if (str_starts_with($event->getRequest()->getPathInfo(), '/_fragment')) {
+ 		   // ESI Fragment als Main Request über die /_fragment route
+		   return;
+		}
+
 		if ('error_404' === $pageModel->type) {
 			$rootPage = PageModel::findById($pageModel->rootId);
 			if ($rootPage) {
