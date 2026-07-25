@@ -13,14 +13,14 @@ class KernelResponseListener {
 			return;
 		}
 
-		$pageModel = $event->getRequest()->attributes->get('pageModel');
+		$request = $event->getRequest();
+		$pageModel = $request->attributes->get('pageModel');
 		if (!$pageModel) {
 			return;
 		}
 
-		if (str_starts_with($event->getRequest()->getPathInfo(), '/_fragment')) {
- 		   // ESI Fragment als Main Request über die /_fragment route
-		   return;
+		if ('/_fragment' === rawurldecode($request->getPathInfo())) {
+			return;
 		}
 
 		if ('error_404' === $pageModel->type) {
@@ -29,10 +29,10 @@ class KernelResponseListener {
 				$logEntry = new Model404Log();
 				$logEntry->tstamp = time();
 				$logEntry->rootPage = $rootPage->id;
-				$logEntry->ip = $event->getRequest()->getClientIp();
-				$logEntry->url = $event->getRequest()->getUri();
-				$logEntry->referrer = $event->getRequest()->headers->get('referer') ?? '';
-				$logEntry->agent = $event->getRequest()->headers->get('User-Agent') ?? '';
+				$logEntry->ip = $request->getClientIp();
+				$logEntry->url = $request->getUri();
+				$logEntry->referrer = $request->headers->get('referer') ?? '';
+				$logEntry->agent = $request->headers->get('User-Agent') ?? '';
 				$logEntry->save();
 			}
 		}
