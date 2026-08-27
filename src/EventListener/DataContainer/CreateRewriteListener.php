@@ -12,7 +12,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 #[AsCallback('tl_404_log', 'config.onload')]
 class CreateRewriteListener extends Backend {
-	public function __construct(private RequestStack $requestStack, private Connection $connection) {
+	public function __construct(
+		private RequestStack $requestStack,
+		private Connection $connection
+	) {
 	}
 
 	public function __invoke(?DataContainer $dc = null): void {
